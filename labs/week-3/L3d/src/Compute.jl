@@ -23,10 +23,55 @@ function bubblesort(array::Array{T,1})::Array{T,1} where T <: Number
     # initialize -
     arr = copy(array) # make a copy of the array
     N = length(arr) # how many elements in the array?
+<<<<<<< HEAD
+    swapped = true;
+    n = N;
+=======
+    n = N;
+    swapped = true;
 
+>>>>>>> 45e4ae5d4e25181d4f1daeb31e5281c1c250eec3
     # TODO: implement the bubble sort algorithm here
+    for i ∈ 1:N        
+         for j ∈ 1:N-i
+             if arr[j] > arr[j+1]
+                 _swap!(arr, j, j+1)
+             end
+         end
+     end
     # TODO: comment out the line below when you implement the algorithm
-    throw(ErrorException("Bubblesort: Implement me!"))
+<<<<<<< HEAD
+=======
+    
+    # Bubble sort implementation using while loop
+    # swapped = true
+    # while swapped
+    #     swapped = false
+    #     for j in 1:N-1
+    #         if arr[j] > arr[j+1]
+    #             _swap!(arr, j, j+1)
+    #             swapped = true
+    #         end
+    #     end
+    #     N -= 1  # Reduce the range since the largest element is now in place
+    # end
+
+>>>>>>> 45e4ae5d4e25181d4f1daeb31e5281c1c250eec3
+    while swapped == true
+        swapped = false
+        for j ∈ 1:n-1
+            if arr[j] > arr[j+1]
+                _swap!(arr, j, j+1)
+                swapped = true
+            end
+        end
+        n -= 1 # after each pass, the largest element is in its correct position, reduce the range of comparison
+    end
+<<<<<<< HEAD
+
+    # throw(ErrorException("Bubblesort: Implement me!"))
+=======
+>>>>>>> 45e4ae5d4e25181d4f1daeb31e5281c1c250eec3
 
     # return sorted array -
     return arr
